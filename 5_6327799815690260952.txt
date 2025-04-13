@@ -1,0 +1,153 @@
+<<<<<<<<<<<<<<<<<<<login form>>>>>>>>>
+
+
+
+// src/components/client/Auth/LoginForm.jsx
+import React, { useState } from 'react';
+import InputGroup from '../../shared/InputGroup';
+import AuthForm from '../../shared/AuthForm';
+
+const LoginForm = () => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate login logic
+    console.log('Logging in with:', formData);
+  };
+
+  return (
+    <AuthForm title="Login" onSubmit={handleSubmit}>
+      <InputGroup label="Email" type="email" name="email" value={formData.email} onChange={handleChange} />
+      <InputGroup label="Password" type="password" name="password" value={formData.password} onChange={handleChange} />
+    </AuthForm>
+  );
+};
+
+export default LoginForm;
+
+
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<<register form>>>>>>>>>>>>>>>>>>>
+
+
+// src/components/client/Auth/RegisterForm.jsx
+import React, { useState } from 'react';
+import InputGroup from '../../shared/InputGroup';
+import AuthForm from '../../shared/AuthForm';
+
+const RegisterForm = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate register logic
+    console.log('Registering user:', formData);
+  };
+
+  return (
+    <AuthForm title="Register" onSubmit={handleSubmit}>
+      <InputGroup label="Name" name="name" value={formData.name} onChange={handleChange} />
+      <InputGroup label="Email" name="email" value={formData.email} onChange={handleChange} />
+      <InputGroup label="Password" type="password" name="password" value={formData.password} onChange={handleChange} />
+    </AuthForm>
+  );
+};
+
+export default RegisterForm;
+
+
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<forget password>>>>>>>>>>>>>>>>>>
+
+
+// src/components/client/Auth/ForgotPassword.jsx
+import React, { useState } from 'react';
+import InputGroup from '../../shared/InputGroup';
+import AuthForm from '../../shared/AuthForm';
+
+const ForgotPassword = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate forgot password logic
+    console.log('Password reset link sent to:', email);
+  };
+
+  return (
+    <AuthForm title="Forgot Password" onSubmit={handleSubmit}>
+      <InputGroup label="Email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    </AuthForm>
+  );
+};
+
+export default ForgotPassword;
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<user profile>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+// src/components/client/Profile/UserProfile.jsx
+import React, { useState } from 'react';
+import InputGroup from '../../shared/InputGroup';
+
+const UserProfile = () => {
+  const [profile, setProfile] = useState({ name: 'John Doe', email: 'john@example.com' });
+
+  const handleChange = (e) => {
+    setProfile({ ...profile, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate update profile logic
+    console.log('Updated Profile:', profile);
+  };
+
+  return (
+    <div className="max-w-md mx-auto p-4">
+      <h2 className="text-xl font-bold mb-4">Update Profile</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <InputGroup label="Name" name="name" value={profile.name} onChange={handleChange} />
+        <InputGroup label="Email" name="email" value={profile.email} onChange={handleChange} />
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+      </form>
+    </div>
+  );
+};
+
+export default UserProfile;
+
+
+
+
+
+
+
+
+
